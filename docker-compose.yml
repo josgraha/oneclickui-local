@@ -1,0 +1,19 @@
+services:
+  web:
+    image: thebloke/cuda11.8.0-ubuntu22.04-oneclick:latest
+    env_file: .env
+    restart: always
+    ports:
+      - "${HOST_PORT:-7860}:${CONTAINER_PORT:-7860}"
+      - "${HOST_API_PORT:-5000}:${CONTAINER_API_PORT:-5000}"
+      - "${HOST_OPENEDAI_PORT_PORT:-5001}:${OPENEDAI_PORT:-5001}"
+      - "${HOST_API_STREAM_PORT:-5005}:${CONTAINER_API_STREAM_PORT:-5005}"
+    volumes:
+      - ./workspace:/workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['0']
+              capabilities: [gpu]
