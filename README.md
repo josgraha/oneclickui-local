@@ -91,8 +91,13 @@ python -m venv .venv
 
 2. Activate the virtualenv
 
+Windows (GitBash):
 ```sh
 source .venv/Scripts/activate
+```
+Linux:
+```sh
+source .venv/bin/activate
 ```
 
 3. Load a model (in this case we're using [TheBloke_Mistral-7B-OpenOrca-GPTQ](https://huggingface.co/TheBloke/Mistral-7B-OpenOrca-GPTQ))
