@@ -2,7 +2,7 @@
 
 This is a testbed for running [TheBloke's OneClickUI for docker LLM](https://github.com/TheBlokeAI/dockerLLM) in a local docker environment.
 
-This allows for testing configurations before creating a [RunPod](https://runpod.io) template.
+This allows for testing configurations before using a [RunPod](https://runpod.io) template.
 
 ## QuickStart
 
@@ -22,9 +22,9 @@ docker compose -p tgw --project-directory . -f ./docker-compose.yml up -d
 
 Once this container is up and running, you might want to play around with the `settings.yml` in the `text-generation-webui` project.
 
-An example `settings.yml` would be saved in the `workspace/text-generation-webui` folder.  A use case for this would be testing the [TextGeneration WebUI Extensions](https://github.com/oobabooga/text-generation-webui/blob/main/docs/Extensions.md).
+An example `settings.yaml` would be saved in the `workspace/text-generation-webui/settings.yaml` folder.  This can be extended from the `workspace/text-generation-webui/settings-template.yaml` A use case for this would be testing the [TextGeneration WebUI Extensions](https://github.com/oobabooga/text-generation-webui/blob/main/docs/Extensions.md).
 
-```yml
+```yaml
 dark_theme: true
 show_controls: true
 start_with: ''
